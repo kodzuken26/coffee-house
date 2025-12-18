@@ -1,0 +1,46 @@
+@use "sass:list";
+@use "sass:color";
+
+$light-green: #999F55;
+$dark-green: #48521D;
+$header-text: 36px;
+
+@media screen and (min-width: 375px) and (max-width: 960px) {
+    .header{
+        width: auto;
+        flex-direction: column;
+    }
+    .header-nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    .link{
+        font-size: 24px !important;
+    }
+}
+
+.header{
+    background-color: $light-green;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.header-nav{
+    display: flex;
+    justify-content: center;
+}
+
+.link{
+    color: $dark-green;
+    font-weight: bold;
+    padding: 0 20px;
+    font-size: $header-text;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover{
+        // color: #7e8c42;
+        border-bottom: 1px solid $dark-green;
+    }
+}
