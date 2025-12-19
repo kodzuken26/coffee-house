@@ -1,0 +1,89 @@
+@use "sass:list";
+@use "sass:color";
+
+$light-green: #999F55;
+$dark-green: #48521D;
+$blue: #C3BFF0;
+
+@media screen and (min-width: 375px) and (max-width: 900px){
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .main-text{
+        text-align: center;
+        h1{
+            font-size: 36px !important;
+        }
+        p{
+            font-size: 24px !important;
+        }
+    }
+    .img-main{
+        width: 325px;
+    }
+    .btn-main{
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px){
+    .main-container{
+        margin: 20px 40px;
+    }
+
+
+    .main-text{
+        h1{
+            font-size: 36px !important;
+        }
+        p{
+            font-size: 24px !important;
+        }
+    }
+    .img-main{
+        width: 325px;
+    }
+    .btn-main{
+        font-size: 30px !important;
+    }
+}
+
+body{
+    background-color: FCFFF6;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-text{
+    color: $dark-green;
+    h1{
+        font-size: 96px;
+    }
+    p{
+        font-size: 48px;
+    }
+}
+
+.btn-main{
+    background-color: $blue;
+    border: none;
+    border-radius: 50px;
+    font-size: 48px;
+    padding: 20px 40px;
+    transition: 0.2s;
+    &:hover{
+        background-color: #a59ef1;
+        box-shadow: 0px 0px 20px $blue;
+    }
+}
+.link2{
+     color: $dark-green;
+     text-decoration: none;
+}
