@@ -1,0 +1,105 @@
+@use "sass:list";
+@use "sass:color";
+
+$light-green: #999F55;
+$dark-green: #48521D;
+$blue: #C3BFF0;
+
+
+@media screen and (min-width: 375px) and (max-width: 960px){
+    .card-page{
+        flex-direction: column;
+        // justify-content: center;
+    }
+    .img-wrap2{
+        width: 300px !important;
+        height: 300px !important;
+    }
+    .text-card{
+        text-align: center;
+        width: auto !important;
+    }
+    .drink-name{
+        font-size: 48px !important;
+    }
+    .drink-price{
+        font-size: 32px !important;
+        padding: 10px 20px !important;
+    }
+    .drink-text{
+        font-size: 32px !important;
+    }
+    .return{
+        font-size: 25px !important;
+        padding: 5px 10px !important;
+    }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1370px){
+    .img-wrap2{
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .drink-name{
+        font-size: 64px !important;
+    }
+    .drink-price{
+        font-size: 40px !important;
+        padding: 10px 20px;
+    }
+    .drink-text{
+        font-size: 40px !important;
+    }
+}
+
+
+.card-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 100px 50px;
+}
+
+.img-wrap2{
+    width: 650px;
+    height: 650px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-position: center;
+        border-radius: 20px;
+    }
+}
+
+.text-card{
+    width: 40%;
+}
+
+.drink-name{
+    font-size: 96px;
+    color: $dark-green;
+}
+.drink-price{
+    font-size: 64px;
+    color: $dark-green;
+    background-color: $blue;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.drink-text{
+    font-size: 64px;
+    font-weight: bold;
+    color: $dark-green;
+}
+.return{
+    color: $dark-green;
+    font-size: 40px;
+    background-color: $blue;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 30px;
+}

@@ -10,6 +10,9 @@ import Footer from './components/footer/Footer.jsx';
 import About from './components/about/About.jsx';
 import Catalog from './components/catalog/Catalog.jsx';
 import Card from './components/card/Card.jsx';
+import Register from './components/User/Register.jsx';
+import Login from './components/User/Login.jsx';
+import Account from './components/User/Account.jsx';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/menu" element={<Catalog />} />
                     <Route path="/menu/drinks/:id" element={<Card />} />
+                    <Route path="/registration" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/account" element={<Account />} />
                 </Routes>
                 {/* <Main/> */}
                 <Footer />

@@ -19,6 +19,8 @@ from django.urls import path, include, re_path
 from api.views import home_view
 # from . import views
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -29,3 +31,6 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     # re_path(r'^.*$', views.react_app, name='react-app'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

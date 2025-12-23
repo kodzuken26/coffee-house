@@ -1,14 +1,14 @@
 import React from 'react';
 import './card.scss';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const API_URL = 'http://127.0.0.1:8000/api/';
 
 export default function Card() {
 
-    const { id } = useParams();  // Получаем id из URL
+    const { id } = useParams();  
     const [drink, setDrink] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -30,12 +30,17 @@ export default function Card() {
     return (
         <div>
             <div className="card-page">
-            <h1>{drink.name}</h1>
-            <img src={drink.image} alt={drink.name} />
-            <p>Цена: {drink.price} ₽</p>
-            <p>Описание: {drink.description || 'Нет описания'}</p>
-            {/* Добавьте другие поля */}
-        </div>
+                <div className="img-wrap2">
+                    <img src={drink.image} alt={drink.name} />
+                </div>
+                
+                <div className="text-card">
+                    <h1 className="drink-name">{drink.name}</h1>
+                    <p className="drink-price">Цена: {drink.price} ₽</p>
+                    <p className="drink-text">Состав: {drink.ingredients}</p>
+                </div>
+            </div>
+            <Link to="/menu" className="return"> ← Назад</Link>
         </div>
     )
 }

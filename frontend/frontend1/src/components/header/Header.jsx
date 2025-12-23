@@ -1,9 +1,55 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./header.scss";
-import {  Router, Routes, Route, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 export default function Header() {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    // Проверяем авторизацию при загрузке компонента
+    useEffect(() => {
+        checkAuth();
+        
+        // Слушаем изменения в localStorage
+        window.addEventListener('storage', checkAuth);
+        
+        return () => {
+            window.removeEventListener('storage', checkAuth);
+        };
+    }, []);
+
+    const checkAuth = () => {
+        const token = localStorage.getItem('access_token');
+        const userStr = localStorage.getItem('user');
+        
+        if (token && userStr) {
+            setIsLoggedIn(true);
+            try {
+                setUser(JSON.parse(userStr));
+            } catch (error) {
+                console.error('Ошибка при парсинге данных пользователя:', error);
+            }
+        } else {
+            setIsLoggedIn(false);
+            setUser(null);
+        }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('user');
+        setIsLoggedIn(false);
+        setUser(null);
+        delete axios.defaults.headers.common['Authorization'];
+        navigate('/');
+        window.location.reload(); // Обновляем страницу
+    };
+
     return (
         <div>
             <div className="header">
@@ -14,7 +60,18 @@ export default function Header() {
                  <nav className="header-nav">
                         <Link to="/about" className="text-link-nav link"> О нас </Link>
                         <Link to="/menu" className="text-link-nav link"> Меню </Link>
-                        <Link className="text-link-nav link"> Аккаунт </Link>
+                          {isLoggedIn ? (
+                        <div className="user-menu">
+                            <Link to="/account" className="text-link-nav link account-link">
+                                {user?.nickname || 'Аккаунт'}
+                            </Link>
+                            {/* <button onClick={handleLogout} className="logout-btn">
+                                Выйти
+                            </button> */}
+                        </div>
+                    ) : (
+                        <Link to="/login" className="text-link-nav link">Аккаунт</Link>
+                    )}
                 </nav>
             </div>
         </div>

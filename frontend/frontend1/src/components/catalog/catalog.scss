@@ -57,6 +57,7 @@ $blue: #C3BFF0;
     margin: 40px 65px;
     width: 361px;
     height: auto;
+    text-decoration: none;
 }
 .catalog-p{
     font-size: 36px;
@@ -64,7 +65,8 @@ $blue: #C3BFF0;
     margin-left: 20px;
     margin-right: 10px;
     overflow-wrap: break-word;
-    // word-break: break-all;
+    text-decoration: none;
+    color: $dark-green;
 }
 .img-wrap{
     width: 360px;

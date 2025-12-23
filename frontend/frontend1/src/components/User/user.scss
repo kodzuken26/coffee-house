@@ -1,0 +1,87 @@
+@use "sass:list";
+@use "sass:color";
+
+$light-green: #999F55;
+$dark-green: #48521D;
+$blue: #C3BFF0;
+
+@media screen and (min-width: 375px) and (max-width: 900px){
+    .register-container{
+        font-size: 25px !important;
+        margin: 20px 10px !important;
+        h1{
+            font-size: 32px !important;
+        }
+    }
+    .form-group{
+        input{
+        height: 30px !important;
+        font-size: 25px !important;
+        width: 80% !important;
+        }
+    }
+    .submit-btn{
+        font-size: 25px !important;
+        padding: 10px 20px !important;
+    }
+
+
+    .login-container{
+        font-size: 25px !important;
+        margin: 20px 10px !important;
+         h1{
+            font-size: 32px !important;
+        }
+    }
+}
+
+
+.register-container{
+    color: $dark-green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    h1{
+        font-size: 40px;
+    }
+}
+
+.form-group{
+    input{
+        height: 50px;
+        width: auto;
+        font-size: 30px;
+        border-radius: 4px;
+    }
+}
+
+// .radio-input{
+//     background-color: $blue;
+//     width: 20px;
+//     height: 20px;
+// }
+
+.submit-btn{
+    font-size: 36px;
+    border: none;
+    border-radius: 50px;
+    color: $dark-green;
+    background-color: $blue;
+    padding: 20px 30px;
+}
+
+
+
+// ----------Логин-------------------------
+
+.login-container{
+    color: $dark-green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    h1{
+        font-size: 40px;
+    }
+}
