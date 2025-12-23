@@ -1,6 +1,22 @@
 @use "sass:list";
 @use "sass:color";
 
+@font-face{
+    font-family: "Cantarell-bold";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Bold.ttf);
+}
+@font-face {
+    font-family: "Cantarell-regular";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Regular.ttf);
+}
+@font-face {
+    font-family: "Cantarell-italic";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Italic.ttf);
+}
+
+$font-bold: "Cantarell-bold", sans-serif;
+$font-usual: "Cantarell-regular", sans-serif;
+$font-italic: "Cantarell-italic", sans-serif;
 $light-green: #999F55;
 $dark-green: #48521D;
 $header-text: 36px;
@@ -27,7 +43,7 @@ $header-text: 36px;
 
 .header{
     background-color: $light-green;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Cantarell", sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;

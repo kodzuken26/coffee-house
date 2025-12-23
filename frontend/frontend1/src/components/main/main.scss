@@ -1,6 +1,23 @@
 @use "sass:list";
 @use "sass:color";
 
+
+@font-face{
+    font-family: "Cantarell-bold";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Bold.ttf);
+}
+@font-face {
+    font-family: "Cantarell-regular";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Regular.ttf);
+}
+@font-face {
+    font-family: "Cantarell-italic";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Italic.ttf);
+}
+
+$font-bold: "Cantarell-bold", sans-serif;
+$font-usual: "Cantarell-regular", sans-serif;
+$font-italic: "Cantarell-italic", sans-serif;
 $light-green: #999F55;
 $dark-green: #48521D;
 $blue: #C3BFF0;
@@ -50,6 +67,11 @@ $blue: #C3BFF0;
         font-size: 30px !important;
     }
 }
+@media screen and (min-width: 1700px) and (max-width: 2560px){
+    .main-container{
+        margin-bottom: 300px;
+    }
+}
 
 body{
     background-color: #FCFFF6;
@@ -63,6 +85,7 @@ body{
 
 .main-text{
     color: $dark-green;
+    font-family: $font-bold;
     h1{
         font-size: 96px;
     }
@@ -78,6 +101,7 @@ body{
     font-size: 48px;
     padding: 20px 40px;
     transition: 0.2s;
+    font-family: $font-italic;
     &:hover{
         background-color: #a59ef1;
         box-shadow: 0px 0px 20px $blue;

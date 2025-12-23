@@ -1,6 +1,23 @@
 @use "sass:list";
 @use "sass:color";
 
+
+@font-face{
+    font-family: "Cantarell-bold";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Bold.ttf);
+}
+@font-face {
+    font-family: "Cantarell-regular";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Regular.ttf);
+}
+@font-face {
+    font-family: "Cantarell-italic";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Italic.ttf);
+}
+
+$font-bold: "Cantarell-bold", sans-serif;
+$font-usual: "Cantarell-regular", sans-serif;
+$font-italic: "Cantarell-italic", sans-serif;
 $light-green: #999F55;
 $dark-green: #48521D;
 $blue: #C3BFF0;
@@ -42,6 +59,7 @@ $blue: #C3BFF0;
     text-align: center;
     margin: 20px 0;
     color: $dark-green;
+    font-family: $font-bold;
     font-size: 64px;
 }
 .catalog{
@@ -67,6 +85,7 @@ $blue: #C3BFF0;
     overflow-wrap: break-word;
     text-decoration: none;
     color: $dark-green;
+    font-family: $font-usual;
 }
 .img-wrap{
     width: 360px;

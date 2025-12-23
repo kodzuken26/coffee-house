@@ -8,7 +8,7 @@ export default function Main() {
      
     
     return (
-        <div className="main-container">
+        <div className="main-container content">
             <div className="main-text">
                 <h1>Кофейня “Catpuccino”</h1>
                 <p>Радуем вас свежим кофе с 2005 года!</p>

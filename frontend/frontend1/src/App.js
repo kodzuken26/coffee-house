@@ -22,7 +22,7 @@ function App() {
             <BrowserRouter>
            
                 <Header />
-                <Routes>
+                <Routes className="content">
                     <Route path="/" element={<Main />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/menu" element={<Catalog />} />
@@ -32,7 +32,7 @@ function App() {
                     <Route path="/account" element={<Account />} />
                 </Routes>
                 {/* <Main/> */}
-                <Footer />
+                <Footer classname="footer" />
            
             </BrowserRouter>
     </div >

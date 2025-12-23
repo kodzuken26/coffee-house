@@ -1,6 +1,23 @@
 @use "sass:list";
 @use "sass:color";
 
+@font-face{
+    font-family: "Cantarell-bold";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Bold.ttf);
+}
+@font-face {
+    font-family: "Cantarell-regular";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Regular.ttf);
+}
+@font-face {
+    font-family: "Cantarell-italic";
+    src: url(../../../public/fonts/Cantarell/Cantarell-Italic.ttf);
+}
+
+$font-bold: "Cantarell-bold", sans-serif;
+$font-usual: "Cantarell-regular", sans-serif;
+$font-italic: "Cantarell-italic", sans-serif;
+
 $light-green: #999F55;
 $dark-green: #48521D;
 $blue: #C3BFF0;
@@ -71,9 +88,11 @@ $blue: #C3BFF0;
 }
 .text-about-h2{
     font-size: 48px;
+    font-family: $font-bold;
 }
 .text-about-punkt{
     font-size: 40px;
+    font-family: $font-usual;
 }
 
 .circle{

@@ -131,6 +131,18 @@ export default function Account() {
                         </button>
                 </div>
             </div>
+            <div className="response-container">
+                <h2>Мои отзывы</h2>
+                <div className="response">
+                    <div className="response-top">
+                        <p>{user.nickname}</p>
+                        <p classname="star"><span>⭐</span> <span>⭐</span> <span>☆</span> <span>☆</span> <span>☆</span></p>
+                    </div>
+                    <form>
+                        <textarea></textarea>
+                    </form>
+                </div>
+            </div>
 
             <button
                 onClick={() => {
