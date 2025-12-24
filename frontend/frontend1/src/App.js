@@ -31,7 +31,6 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/account" element={<Account />} />
                 </Routes>
-                {/* <Main/> */}
                 <Footer classname="footer" />
            
             </BrowserRouter>

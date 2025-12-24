@@ -10,11 +10,11 @@ export default function Header() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
-    // Проверяем авторизацию при загрузке компонента
+    
     useEffect(() => {
         checkAuth();
         
-        // Слушаем изменения в localStorage
+        
         window.addEventListener('storage', checkAuth);
         
         return () => {
@@ -47,7 +47,7 @@ export default function Header() {
         setUser(null);
         delete axios.defaults.headers.common['Authorization'];
         navigate('/');
-        window.location.reload(); // Обновляем страницу
+        window.location.reload(); 
     };
 
     return (
@@ -65,9 +65,6 @@ export default function Header() {
                             <Link to="/account" className="text-link-nav link account-link">
                                 {user?.nickname || 'Аккаунт'}
                             </Link>
-                            {/* <button onClick={handleLogout} className="logout-btn">
-                                Выйти
-                            </button> */}
                         </div>
                     ) : (
                         <Link to="/login" className="text-link-nav link">Аккаунт</Link>

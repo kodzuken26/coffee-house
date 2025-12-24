@@ -10,9 +10,7 @@ export default function Catalog() {
 
     const [Data, setData] = useState([]);
         const getData = () => {
-            //const dataResponce = await
             axios.get(API_URL + 'drinks')
-                // console.log(dataResponce)
                 .then(response => {
                     setData(response.data) 
                 });

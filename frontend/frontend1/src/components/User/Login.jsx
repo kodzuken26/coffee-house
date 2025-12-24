@@ -106,7 +106,7 @@ export default function Login() {
             {error && <div className="error-message">{error}</div>}
             {successMessage && <div className="success-message">{successMessage}</div>}
             
-            <form onSubmit={handleSubmit}>
+            <form className="form-board" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Логин *</label> <br />
                     <input

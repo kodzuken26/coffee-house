@@ -53,7 +53,7 @@ class UserRegistrationAPIView(GenericAPIView):
             user = serializer.save()
             token = RefreshToken.for_user(user)
             
-            # Получаем профиль пользователя
+            
             profile = UserProfile.objects.get(user=user)
             
             user_data = {
@@ -158,13 +158,13 @@ class UploadImageView(APIView):
     def post(self, request):
         try:
             profile = UserProfile.objects.get(user=request.user)
-            image_type = request.data.get('type')  # 'avatar' или 'banner'
+            image_type = request.data.get('type')  
             file = request.FILES.get('image')
             
             if not file:
                 return Response({"error": "Файл не выбран"}, status=400)
             
-            # Сохраняем файл
+            
             if image_type == 'avatar':
                 profile.avatar = file
             elif image_type == 'banner':

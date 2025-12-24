@@ -403,33 +403,35 @@ export default function Register() {
             {successMessage && <div className="success-message">{successMessage}</div>}
             
             <form onSubmit={handleSubmit}>
-                {/* Имя (отправляется как first_name) */}
+                
                 <div className="form-group">
-                    <label>Имя *</label> <br />
+                    <label>Имя </label> <br />
                     <input
                         type="text"
                         name="first_name"
                         value={formData.first_name}
                         onChange={handleChange}
+                        placeholder="Введите имя"
                         required
                     />
                 </div>
                 <br /> 
                 
-                {/* Фамилия (отправляется как last_name) */}
+                
                 <div className="form-group">
-                    <label>Фамилия *</label> <br />
+                    <label>Фамилия </label> <br />
                     <input
                         type="text"
                         name="last_name"
                         value={formData.last_name}
                         onChange={handleChange}
+                        placeholder="Введите фамилию"
                         required
                     />
                 </div>
                 <br /> 
                 
-                {/* Отчество */}
+               
                 <div className="form-group">
                     <label>Отчество</label> <br />
                     <input
@@ -437,70 +439,73 @@ export default function Register() {
                         name="patronymic"
                         value={formData.patronymic}
                         onChange={handleChange}
+                        placeholder="Введите отчество"
                     />
                 </div>
                 <br /> 
                 
-                {/* Имя пользователя (username) */}
+                
                 <div className="form-group">
-                    <label>Логин *</label> <br />
+                    <label>Логин </label> <br />
                     <input
                         type="text"
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
+                        placeholder="Введите логин"
                         required
                     />
                 </div>
                 <br /> 
                 
-                {/* Никнейм */}
+                
                 <div className="form-group">
-                    <label>Никнейм *</label> <br />
+                    <label>Никнейм </label> <br />
                     <input
                         type="text"
                         name="nickname"
                         value={formData.nickname}
                         onChange={handleChange}
+                        placeholder="Введите никнейм"
                         required
                     />
                 </div>
                 <br /> 
                 
-                {/* Email */}
+                
                 <div className="form-group">
-                    <label>Эл. почта *</label> <br />
+                    <label>Эл. почта </label> <br />
                     <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        placeholder="Введите эл.почту"
                         required
                     />
                 </div>
                 <br /> 
                 
-                {/* Телефон с маской */}
+                
                 <div className="form-group">
-                    <label>Телефон *</label> <br />
+                    <label>Телефон </label> <br />
                     <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        placeholder="8(999)999-99-99"
+                        placeholder="Введите номер телефона"
                         pattern="8\(\d{3}\)\d{3}-\d{2}-\d{2}"
                     />
-                    <div className="phone-hint">Формат: 8(999)999-99-99</div>
                 </div>
                 <br /> 
                 
-                {/* Пол */}
+                
                 <div className="form-group">
-                    <label>Пол *</label> <br />
+                    <label>Пол </label> <br />
                     <div className="radio-group">
-                        <label>
+                        <label className="radio-input">
                             <input
                                 type="radio"
                                 name="gender"
@@ -510,7 +515,7 @@ export default function Register() {
                             />
                             Женский
                         </label> <br />
-                        <label>
+                        <label className="radio-input">
                             <input
                                 type="radio"
                                 name="gender"
@@ -520,9 +525,8 @@ export default function Register() {
                             />
                             Мужской
                         </label> <br />
-                        <label>
+                        <label className="radio-input">
                             <input
-                                className="radio-input"
                                 type="radio"
                                 name="gender"
                                 value="none-gender"
@@ -535,7 +539,7 @@ export default function Register() {
                 </div>
                 <br /> 
                 
-                {/* Политика конфиденциальности */}
+                
                 <div className="form-group required-checkbox-group">
                     <label className="required-checkbox">
                         <input
@@ -544,11 +548,10 @@ export default function Register() {
                             checked={formData.privacyPolicy}
                             onChange={handleChange}
                         />
-                        Я соглашаюсь с правилами "Политики конфиденциальности" *
+                        Я соглашаюсь с правилами "Политики конфиденциальности" 
                     </label>
                 </div>
                 
-                {/* Согласие на обработку данных */}
                 <div className="form-group required-checkbox-group">
                     <label className="required-checkbox">
                         <input
@@ -557,33 +560,35 @@ export default function Register() {
                             checked={formData.personalData}
                             onChange={handleChange}
                         />
-                        Я даю согласие на обработку персональных данных *
+                        Я даю согласие на обработку персональных данных 
                     </label>
                 </div>
                 <br />
                 
-                {/* Пароль */}
+                
                 <div className="form-group">
-                    <label>Пароль *</label> <br />
+                    <label>Пароль </label> <br />
                     <input
                         type="password"
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
+                        placeholder="Введите пароль"
                         required
                         minLength="8"
                     />
                 </div>
                 <br /> 
                 
-                {/* Подтверждение пароля */}
+                
                 <div className="form-group">
-                    <label>Подтверждение пароля *</label> <br />
+                    <label>Подтверждение пароля</label> <br />
                     <input
                         type="password"
                         name="password2"
                         value={formData.password2}
                         onChange={handleChange}
+                        placeholder="Повторите пароль"
                         required
                     />
                 </div>
