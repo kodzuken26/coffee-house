@@ -18,11 +18,11 @@ export default function Account() {
         }
     }, [navigate]);
 
-    // ПРОСТАЯ функция загрузки картинки
+    
     const uploadImage = async (file, type) => {
         const formData = new FormData();
         formData.append('image', file);
-        formData.append('type', type);  // 'avatar' или 'banner'
+        formData.append('type', type);  
 
         try {
             const token = localStorage.getItem('access_token');
@@ -37,7 +37,7 @@ export default function Account() {
                 }
             );
 
-            // Обновляем пользователя
+            
             const updatedUser = {
                 ...user,
                 avatar_url: response.data.avatar_url,
@@ -57,10 +57,10 @@ export default function Account() {
 
     return (
         <div className="simple-account">
-            {/* Баннер */}
+            
             <div className="banner"
                 style={{
-                    backgroundImage: `url(${getBannerUrl(user?.banner_url)})` // ← ВОССТАНОВИЛ
+                    backgroundImage: `url(${getBannerUrl(user?.banner_url)})` 
                 }}>
                 <img
                     src={getBannerUrl(user?.banner_url)}
@@ -87,7 +87,7 @@ export default function Account() {
                 )}
             </div>
 
-            {/* Аватар и информация */}
+            
             <div className="profile">
                 <div className="avatar-container">
                     <img

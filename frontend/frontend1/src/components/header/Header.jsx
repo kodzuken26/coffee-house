@@ -31,7 +31,7 @@ export default function Header() {
             try {
                 setUser(JSON.parse(userStr));
             } catch (error) {
-                console.error('Ошибка при парсинге данных пользователя:', error);
+                console.error('Ошибка при получении данных пользователя:', error);
             }
         } else {
             setIsLoggedIn(false);
@@ -39,16 +39,7 @@ export default function Header() {
         }
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
-        localStorage.removeItem('user');
-        setIsLoggedIn(false);
-        setUser(null);
-        delete axios.defaults.headers.common['Authorization'];
-        navigate('/');
-        window.location.reload(); 
-    };
+    
 
     return (
         <div>

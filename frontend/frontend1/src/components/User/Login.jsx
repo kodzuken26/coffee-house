@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function Login() {
     const [formData, setFormData] = useState({
-        username: "",  // логин (будет использоваться как username)
+        username: "",  
         password: "",
     });
 
@@ -22,23 +22,23 @@ export default function Login() {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-         e.preventDefault();
-    console.log("Отправляемые данные для входа:", formData);
+        e.preventDefault();
+        console.log("Отправляемые данные для входа:", formData);
     
-    if (isLoading) return;
-    setIsLoading(true);
-    setError(null);
+        if (isLoading) return;
+        setIsLoading(true);
+        setError(null);
 
     try {
         const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
         console.log("Успешный вход!", response.data);
         setSuccessMessage("Вы успешно вошли в аккаунт!");
         
-        // Сохраняем данные пользователя и токен
+        
         localStorage.setItem('access_token', response.data.tokens.access);
         localStorage.setItem('refresh_token', response.data.tokens.refresh);
         
-        // Сохраняем ВСЕ данные пользователя
+        
         localStorage.setItem('user', JSON.stringify({
             id: response.data.id,
             username: response.data.username,
@@ -51,27 +51,25 @@ export default function Login() {
             role: response.data.role,
         }));
         
-        // Устанавливаем заголовок Authorization для всех будущих запросов
         axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.tokens.access}`;
         
-        // Перенаправляем в личный кабинет
         setTimeout(() => {
-            navigate('/account'); // Перенаправляем на страницу аккаунта
+            navigate('/account'); 
         }, 1500);
         
         } catch (error) {
             console.log("Ошибка при входе!", error.response?.data || error.message);
             if (error.response && error.response.data) {
-                // Обрабатываем ошибки от сервера
+                
                 const errorData = error.response.data;
                 
-                // Если это строка с ошибкой
+                
                 if (typeof errorData === 'string') {
                     setError(errorData);
                 }
-                // Если это объект с ошибками
+                
                 else if (typeof errorData === 'object') {
-                    // Показываем первую ошибку
+                    
                     const firstErrorKey = Object.keys(errorData)[0];
                     const firstErrorMessage = errorData[firstErrorKey];
                     
@@ -91,13 +89,7 @@ export default function Login() {
         }
     };
 
-    // Функция для тестового входа (можно удалить после тестирования)
-    const handleTestLogin = () => {
-        setFormData({
-            username: "testuser",
-            password: "Test123456"
-        });
-    };
+    
 
     return (
         <div className="login-container">
